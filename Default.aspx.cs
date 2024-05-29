@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Data.Odbc;
+using System.Drawing;
 
 
 
@@ -41,24 +42,41 @@ namespace PP2024_V10
 
                 using (SqlConnection conn = new SqlConnection(builder.ConnectionString))
                 {
-                    string script = "SELECT * FROM USUARIOS WHERE ID= 1";
+                    string script = String.Format("INSERT INTO USUARIOS (Nombre, Apellido, Edad, Pass) VALUES('{0}', '{1}', {2}, '{3}')", txtNombre.Text, txtApellido.Text, txtEdad.Text, txtPass.Text);
 
                     conn.Open();
 
                     SqlCommand command = new SqlCommand(script, conn);
 
-                    SqlDataReader reader = command.ExecuteReader();
+                    int resp = command.ExecuteNonQuery();
 
-                    if (reader.HasRows)
+                    if (resp > 0)
                     {
-                        while (reader.Read())
-                        {
-                            string id = reader.GetInt32(0).ToString();
-                            string nombre = reader.GetString(1);
-                            lblTexto.Text = "Se ha creado el usuario " + nombre;
-                        }
+                        lblTexto.Text = "Se ha generado el usuario para " + txtNombre.Text + " " + txtApellido.Text;
+                        lblTexto.ForeColor = Color.Green;
+                        txtApellido.Text = "";
+                        txtNombre.Text = "";
+                        txtEdad.Text = "";
+                        txtPass.Text = "";
+                        txtRepPass.Text = "";
                     }
-                    reader.Close();
+                    else
+                    {
+                        lblTexto.Text = "Ha ocurrido un error";
+                        lblTexto.ForeColor = Color.Red;
+                    }
+
+                    //if (reader.HasRows)
+                    //{
+                    //    while (reader.Read())
+                    //    {
+                    //        string id = reader.GetInt32(0).ToString();
+                    //        string nombre = reader.GetString(1);
+                    //        lblTexto.Text = "Se ha creado el usuario " + nombre;
+                    //    }
+                    //}
+
+                    //reader.Close();
                     conn.Close();
                 }
 
