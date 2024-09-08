@@ -38,10 +38,17 @@ namespace PP2024_V10
 
                     SqlCommand command = new SqlCommand(script, connection);
 
-                    //SqlDataReader reader = command.ExecuteReader();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        string user = reader.GetString(0);
+                    }
+
+                    reader.Close();
 
                     int filas = command.ExecuteNonQuery();
-
+              
                     connection.Close();
 
                     if (filas < 0)
