@@ -31,7 +31,7 @@ namespace PP2024_V10
                     //builder.UserID = "sa";
                     //builder.Password = "13213";
 
-                    string script = "SELECT USUARIO FROM USUARIOS WHERE USUARIO = '" + txtUsuario.Text + "' AND" +
+                    string script = "SELECT USUARIO FROM LOGIN WHERE USUARIO = '" + txtUsuario.Text + "' AND" +
                         " PASS = '" + txtPassword.Text + "'";
 
                     connection.Open();
