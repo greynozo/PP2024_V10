@@ -40,28 +40,25 @@ namespace PP2024_V10
 
                     SqlDataReader reader = command.ExecuteReader();
 
+                    string user = String.Empty;
+
                     while (reader.Read())
                     {
-                        string user = reader.GetString(0);
+                        user = reader.GetString(0);
                     }
-
                     reader.Close();
 
-                    int filas = command.ExecuteNonQuery();
-              
-                    connection.Close();
-
-                    if (filas < 0)
+                    if (user != String.Empty)
                     {
                         Session["Usuario"] = txtUsuario.Text;
-                        Page.Response.Redirect("Inicio.aspx");
-                        //Response.Redirect("Inicio.aspx", true);
+
+                        //Agregar "false" en el redirect. Le indicamos a la aplicacion
+                        //que debe terminar el codigo en esta pagina y redigir a la siguiente.
+                        Response.Redirect("Inicio.aspx",false);
                     }
+
                     //else
                         //lblError.Text = "Usuario o Password incorrectos.";
-
-                    //reader.Close();
-
 
                 }
                 catch (Exception exception)
