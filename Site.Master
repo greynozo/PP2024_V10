@@ -29,6 +29,9 @@
                 <li>
                     <a href="Vista.aspx">Vista</a>
                 </li>
+                <li>
+                    <a href="Tabla.aspx">Tabla</a>
+                </li>
 	            </ul>
 	          </li>
 	          <li>

@@ -20,12 +20,12 @@ namespace PP2024_V10
             {
                 id = Request.QueryString["ID"];
 
-                TraerLibro(id);
+                TraerAlumno(id);
             }
         }
 
 
-        public void TraerLibro(string id)
+        public void TraerAlumno(string id)
         {
             using (SqlConnection connection = new SqlConnection(Cadena))
             {
@@ -83,7 +83,7 @@ namespace PP2024_V10
                    else
                    {
                        lblMensaje.Visible = true;
-                       lblMensaje.Text = "Se guardo el correctamente";
+                       lblMensaje.Text = "No se guardo el alumno";
                    }
                 }
                 catch (Exception exception)
