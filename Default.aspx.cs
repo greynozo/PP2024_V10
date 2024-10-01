@@ -19,7 +19,18 @@ namespace PP2024_V10
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+            {
+                if (Session["Usuario"] == null)
+                {
+                    Response.Redirect("Login.aspx");
+                }
+                else
+                {
+                    if (Session["Usuario"].ToString() == String.Empty)
+                        Response.Redirect("Login.aspx");
+                }
+            }
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)

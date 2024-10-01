@@ -13,6 +13,7 @@
     <RootNamespace>PP2024_V10</RootNamespace>
     <AssemblyName>PP2024_V10</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,6 +65,7 @@
     <Content Include="Estilos\css\Font.css" />
     <Content Include="Estilos\css\FontAwesom47.css" />
     <Content Include="Estilos\css\style.css" />
+    <Content Include="Estilos\images\editar.png" />
     <Content Include="Estilos\images\logo.jpg" />
     <Content Include="Estilos\js\bootstrap.min.js" />
     <Content Include="Estilos\js\jquery.min.js" />
@@ -85,12 +87,14 @@
     <Content Include="Estilos\Login\js\popper.js" />
     <Content Include="Inicio.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Modificar.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Vista.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -161,6 +165,13 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Modificar.aspx.cs">
+      <DependentUpon>Modificar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modificar.aspx.designer.cs">
+      <DependentUpon>Modificar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -168,6 +179,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vista.aspx.cs">
+      <DependentUpon>Vista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista.aspx.designer.cs">
+      <DependentUpon>Vista.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

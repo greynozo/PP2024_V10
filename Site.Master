@@ -21,13 +21,13 @@
 	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
 	            <ul class="collapse list-unstyled" id="homeSubmenu">
                 <li>
-                    <a href="Default.aspx">Home 1</a>
+                    <a href="Default.aspx">Default</a>
                 </li>
                 <li>
-                    <a href="Inicio.aspx">Home 2</a>
+                    <a href="Inicio.aspx">Inicio</a>
                 </li>
                 <li>
-                    <a href="#">Home 3</a>
+                    <a href="Vista.aspx">Vista</a>
                 </li>
 	            </ul>
 	          </li>
